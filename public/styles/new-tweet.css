@@ -1,0 +1,40 @@
+.new-tweet {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  width: 90%;
+  margin:1em;
+}
+
+button {
+  background-color: blue;
+  font-family: 'Bungee', cursive;
+  color: white;
+}
+
+section div {
+  display: flex;
+  font-family: 'Bungee', cursive;
+  justify-content: space-between;
+}
+
+form {
+  width: 100%;
+}
+
+textarea {
+  display: flex;
+  color: rgb(102, 101, 101);
+  font-weight: bold;
+  width: 100%;
+  background-color: transparent;
+  column-count: 1;
+  border: 0px;
+  border-bottom: 3px solid rgb(102, 101, 101);
+  line-height: 0.75em;
+  resize: none;
+  text-shadow: 8px 9px 4px #a1a1a175;
+  margin-bottom: 1em;
+  outline: none;
+}
