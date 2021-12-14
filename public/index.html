@@ -31,44 +31,35 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- timeago -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
-
-
-
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class="nav sticky">
-
+    <nav class="nav">
       <span id="logo">tweeter</span>
-
       <div class="nav-tweet">
         <line><b>Write</b> a new tweet</line>
         <line><i class="fas fa-angle-double-down red"></i></line>
       </div>
-
     </nav>
-
-
     <!-- Header with name and profile pic -->
     <header id="profile-header">
-
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
-
       <div class="name">
         <line><b>Emily</b> Waters</line>
       </div>
-
   </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-
-      <section class="tweet-container shadow">
+      <section id="tweet-container">
         <h4>"Is it at all possible for anyone to just shut the fuck up?" - Bo Burnham</h4>
         <form action="/tweets/" method="POST" class="tweet-form">
           <label for="tweet-text shadow"></label>
@@ -78,38 +69,7 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
-      </section>
-
-      <section class="tweet-container">
-
-          <article class="tweet">
-
-            <header class="header">
-              <div><img src="http://placehold.it/">User Name</div>
-              <div class="handle">@userHandle</div>
-            </header>
-           
-            <div class="tweet-text">This is where the tweet text goes</div>
-            
-            <footer class="tweet-footer small">
-
-              <line>date</line>
-
-              <div>
-                <button class="tweet-butt"><i class="fas fa-flag"></i></button>
-                <button class="tweet-butt"><i class="fas fa-retweet"></i></button>
-                <button class="tweet-butt"><i class="fas fa-heart"></i></button>
-              </div>
-
-            </footer>
-
-          </article>
-
-      </section>
     </main> 
-    <!-- <script src="scripts/client.js"></script> -->
-    <!-- <script src="/tweets"></script> -->
     <script src="scripts/composer-char-counter.js"></script>
   </body>
-
 </html>
