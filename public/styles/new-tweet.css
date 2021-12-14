@@ -33,7 +33,7 @@ form {
   width: 100%;
 }
 
-textarea {
+#tweet-text {
   display: flex;
   color: rgb(102, 101, 101);
   font-weight: bold;
