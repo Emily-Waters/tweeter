@@ -1,0 +1,35 @@
+.tweet {
+  width: 100%;
+  border: 3px solid rgb(78, 78, 78);
+  padding:1em 1em 0em 1em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.handle {
+  color: slategray;
+}
+
+.tweet:hover {
+  box-shadow: 8px 9px 4px #a1a1a175;
+}
+
+.tweet-text {
+  padding: 1em 0em 1em 0em;
+}
+
+.tweet-butt {
+  color: blue;
+  border: none;
+  background-color: transparent;
+}
+.tweet-butt:hover {
+  color:rgb(185, 185, 28);
+}
+
+.small {
+  font-size:small;
+}

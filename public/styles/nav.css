@@ -10,7 +10,7 @@ nav {
   z-index: 1;
 }
 
-span {
+#logo {
   font-family: 'Bungee', cursive;
   font-weight: 600;
   margin: 1.5em;

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- Bungee Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +42,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
 
-      <span>tweeter</span>
+      <span id="logo">tweeter</span>
 
       <div class="nav-tweet">
         <line><b>Write</b> a new tweet</line>
@@ -52,7 +53,7 @@
 
 
     <!-- Header with name and profile pic -->
-    <header>
+    <header id="profile-header">
 
       <div>
           <img src="/images/profile-hex.png"> 
@@ -67,29 +68,47 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <section class="tweet shadow">
+      <section class="tweet-container shadow">
         <h4>"Is it at all possible for anyone to just shut the fuck up?" - Bo Burnham</h4>
-        <form action="/tweets/" method="POST">
+        <form action="/tweets/" method="POST" class="tweet-form">
           <label for="tweet-text shadow"></label>
-          <textarea name="text" id="tweet-text" class="shadow" placeholder="What are you humming about?"></textarea>
-          <div>
-            <button type="submit" class="tweet-button">Tweet</button>
+          <textarea name="text" id="tweet-input" class="shadow" placeholder="What are you humming about?"></textarea>
+          <footer class="tweet-footer">
+            <button type="submit" id="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </footer>
         </form>
       </section>
 
-      <section class="tweet shadow">
-        <h1>Tweets</h1>
-          <article>
-            Lots of Tweets
+      <section class="tweet-container">
+
+          <article class="tweet">
+
+            <header class="header">
+              <div><img src="http://placehold.it/">User Name</div>
+              <div class="handle">@userHandle</div>
+            </header>
+           
+            <div class="tweet-text">This is where the tweet text goes</div>
+            
+            <footer class="tweet-footer small">
+
+              <line>date</line>
+
+              <div>
+                <button class="tweet-butt"><i class="fas fa-flag"></i></button>
+                <button class="tweet-butt"><i class="fas fa-retweet"></i></button>
+                <button class="tweet-butt"><i class="fas fa-heart"></i></button>
+              </div>
+
+            </footer>
+
           </article>
+
       </section>
     </main> 
-
-
-
-
+    <!-- <script src="scripts/client.js"></script> -->
+    <!-- <script src="/tweets"></script> -->
     <script src="scripts/composer-char-counter.js"></script>
   </body>
 
