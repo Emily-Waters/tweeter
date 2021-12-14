@@ -4,11 +4,12 @@ $(document).ready(function() {
   $('#tweet-input').on('input', function() {
     const textChars = $(this).val();
     const charCount = textChars.length;
-    $(this).next().children('.counter').text(140 - charCount);
+    const counter = $(this).next().children('.counter');
+    $(counter).text(140 - charCount);
     if (charCount > 140) {
-      $(this).css('color','red');
+      $(counter).css('color','red');
     } else {
-      $(this).css('color','inherit');
+      $(counter).css('color','inherit');
     }
   });
 
