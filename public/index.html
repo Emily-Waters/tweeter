@@ -67,11 +67,11 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <section class="new-tweet">
+      <section class="tweet shadow">
         <h4>"Is it at all possible for anyone to just shut the fuck up?" - Bo Burnham</h4>
         <form action="/tweets/" method="POST">
-          <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <label for="tweet-text shadow"></label>
+          <textarea name="text" id="tweet-text" class="shadow" placeholder="What are you humming about?"></textarea>
           <div>
             <button type="submit" class="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -79,6 +79,12 @@
         </form>
       </section>
 
+      <section class="tweet shadow">
+        <h1>Tweets</h1>
+          <article>
+            Lots of Tweets
+          </article>
+      </section>
     </main> 
 
 

@@ -1,13 +1,14 @@
-.new-tweet {
+.tweet {
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
   width: 90%;
   margin:1em;
+}
+
+.shadow {
   text-shadow: 8px 9px 4px #a1a1a175;
-
-
 }
 
 .tweet-button {
@@ -15,13 +16,11 @@
   font-family: 'Bungee', cursive;
   color: white;
   box-shadow: 8px 9px 4px #a1a1a175;
-  padding: 5px;
+  padding: 0.1em;
 }
 
 section {
-  text-shadow: 8px 9px 4px #a1a1a175;
   color: rgb(102, 101, 101);
-
 }
 
 section div {
@@ -39,14 +38,15 @@ form {
   display: flex;
   color: rgb(102, 101, 101);
   font-weight: bold;
+  font-size:80%;
   width: 100%;
   background-color: transparent;
   column-count: 1;
   border: 0px;
-  border-bottom: 3px solid rgb(102, 101, 101);
+  border-bottom: 3px solid rgb(78, 78, 78);
   line-height: 0.75em;
   resize: none;
-  text-shadow: inherit;
+  /* text-shadow: inherit; */
   margin-bottom: 1em;
   outline: none;
 }
