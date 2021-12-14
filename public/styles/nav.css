@@ -8,6 +8,7 @@ nav {
   justify-content:space-between;
   align-items: end;
   z-index: 1;
+  position: fixed;
 }
 
 #logo {
@@ -28,9 +29,5 @@ nav {
   color: red
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
+
 
