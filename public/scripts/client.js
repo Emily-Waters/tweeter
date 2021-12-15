@@ -50,13 +50,22 @@ $(document).ready(function() {
     }
   });
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(data) {
+    const safeHTML = `<p>${escape(data.content.text)}</p>`;
+    console.log(safeHTML);
+    // <script>alert('uh oh!');</script>
     return `<article class="tweet">
   <header class="header">
     <div><img src=${data.user.avatars}>${data.user.name}</div>
     <div class="handle">${data.user.handle}</div>
   </header>
-  <div class="tweet-text">${data.content.text}</div>
+  <div class="tweet-text">${safeHTML}</div>
   <footer class="tweet-footer small">
     <line>${timeago.format(data.created_at)}</line>
     <div>
@@ -81,6 +90,7 @@ $(document).ready(function() {
       url: "/tweets",
       dataType: "json",
       success: function(data) {
+        console.log(data);
         renderTweets(data);
       }
     });
