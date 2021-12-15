@@ -63,7 +63,6 @@ $(document).ready(function() {
 
   const createTweetElement = function(data) {
     const safeHTML = `<p>${escape(data.content.text)}</p>`;
-    console.log(safeHTML);
     // <script>alert('uh oh!');</script>
     return `<article class="tweet">
   <header class="header">
@@ -104,9 +103,19 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+  $('#compose-button').hover(function() {
+    $(this)
+      .css('cursor','pointer')
+      .animate({top:"5px"},500)
+      .animate({top:"0px"},500);
+  });
+  
+  $('#compose-button').click(function() {
+
+  });
   
 });
-
 
 
 
