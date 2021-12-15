@@ -1,25 +1,53 @@
-// /*
-//  * Client-side JS logic goes here
-//  * jQuery is already loaded
-//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-//  */
 $(document).ready(function() {
+  // Hardcoded char limit, can be adjusted
+  const charLimit = 140;
+
+
+  // Returns the length of text entered into the tweet form input
+  const tweetLength = (tweet) => {
+    return tweet.val().length;
+  };
+
+  // Returns the text entered into the tweet form input
+  const tweetText = (tweet) => {
+    return tweet.val();
+  };
+
+  // Validates the length of a tweet (not empty, below char limit)
+  const tweetValidate = (tweetLength, limit) => {
+    if (!tweetLength || tweetLength > limit) {
+      return false;
+    }
+    return true;
+  };
+
+  const tweetError = (tweetLength, limit) => {
+    if (!tweetLength) {
+      return 'Tweets can\'t be empty';
+    } else {
+      return `Your tweet is ${tweetLength - limit} character(s) over the limit.`;
+    }
+  };
 
   const form = $('.tweet-form');
 
   form.submit(function(event) {
-    const text = ($(this).serialize());
-    const target = event.currentTarget.action;
     event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: target,
-      data: text
-    });
+    const tweet = $('#tweet-input');
+    const tweetData = ($(this).serialize());
+    const length = tweetLength(tweet);
+    const targetURL = event.currentTarget.action;
+
+    if (tweetValidate(length, charLimit)) {
+      $.ajax({
+        type: "POST",
+        url: targetURL,
+        data: tweetData
+      });
+    } else {
+      alert(tweetError(length, charLimit));
+    }
   });
-
-
-
 
   const createTweetElement = function(data) {
     return `<article class="tweet">
@@ -47,7 +75,7 @@ $(document).ready(function() {
   };
 
   const loadTweets = function() {
-    const tweetData = $.ajax({
+    $.ajax({
       type: "GET",
       url: "/tweets",
       dataType: "json",
