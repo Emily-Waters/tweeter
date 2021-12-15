@@ -23,11 +23,16 @@ $(document).ready(function() {
   };
 
   const tweetError = (tweetLength, limit) => {
-    if (!tweetLength) {
-      return 'Tweets can\'t be empty';
-    } else {
-      return `Your tweet is ${tweetLength - limit} character(s) over the limit.`;
-    }
+    const error = $('#error-message');
+    error.animate({ opacity: 0 }, 200, () => {
+      if (!tweetLength) {
+        error.text("Tweets can't be empty");
+        error.animate({ opacity: 1 }, 500);
+      } else {
+        error.text(`Tweets need to be less than ${limit} characters`);
+        error.animate({ opacity: 1 }, 500);
+      }
+    });
   };
 
   form.submit(function(event) {
@@ -46,7 +51,7 @@ $(document).ready(function() {
         }
       });
     } else {
-      alert(tweetError(length, charLimit));
+      tweetError(length, charLimit);
     }
   });
 

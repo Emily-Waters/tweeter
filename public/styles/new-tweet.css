@@ -49,3 +49,16 @@
   outline: none;
 }
 
+#error-message {
+  display: flex;
+  border: 3px solid rgba(255, 0, 0, 0.233);
+  background-color:rgba(255, 0, 0, 0.233);
+  font-family: 'Bungee', cursive;
+  color:rgba(112, 0, 0, 0.39);
+  font-family: 'Bungee', cursive;
+  border-radius: 5px;
+  width:inherit;
+  margin:0.5em 1em 0em 1em;
+  justify-content:center;
+  opacity: 0;
+}
