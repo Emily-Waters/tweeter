@@ -59,16 +59,23 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section id="tweet-container">
+
+      <section id="tweet-box">
         <h4>"Is it at all possible for anyone to just shut the fuck up?" - Bo Burnham</h4>
         <form action="/tweets/" method="POST" class="tweet-form">
-          <label for="tweet-text shadow"></label>
-          <textarea name="text" id="tweet-input" class="shadow" placeholder="What are you humming about?"></textarea>
-          <footer class="tweet-footer">
-            <button type="submit" id="tweet-button">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </footer>
-        </form>
+        <label for="tweet-text shadow"></label>
+        <textarea name="text" id="tweet-input" class="shadow" placeholder="What are you humming about?"></textarea>
+        <footer class="tweet-footer">
+          <button type="submit" id="tweet-button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </footer>
+      </form>
+    </section>
+
+
+      <section id="tweet-container">
+      </section>
+
     </main> 
     <script src="scripts/composer-char-counter.js"></script>
   </body>
