@@ -1,3 +1,12 @@
+#tweet-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  width: 90%;
+  margin:1em;
+}
+
 .tweet {
   width: 100%;
   border: 3px solid rgb(78, 78, 78);
