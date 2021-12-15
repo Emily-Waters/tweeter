@@ -80,7 +80,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('#tweet-container').prepend($tweet);
+      $('#tweet-container').append($tweet);
     }
   };
 
@@ -90,7 +90,9 @@ $(document).ready(function() {
       url: "/tweets",
       dataType: "json",
       success: function(data) {
-        console.log(data);
+        data.sort((a,b) => {
+          return b.created_at - a.created_at;
+        });
         renderTweets(data);
       }
     });
