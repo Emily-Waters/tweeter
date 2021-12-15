@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Hardcoded char limit, can be adjusted
   const charLimit = 140;
+  const form = $('.tweet-form');
 
 
   // Returns the length of text entered into the tweet form input
@@ -29,20 +30,20 @@ $(document).ready(function() {
     }
   };
 
-  const form = $('.tweet-form');
-
   form.submit(function(event) {
     event.preventDefault();
     const tweet = $('#tweet-input');
-    const tweetData = ($(this).serialize());
     const length = tweetLength(tweet);
+    const tweetData = ($(this).serialize());
     const targetURL = event.currentTarget.action;
-
     if (tweetValidate(length, charLimit)) {
       $.ajax({
         type: "POST",
         url: targetURL,
-        data: tweetData
+        data: tweetData,
+        success: () => {
+          location.reload();
+        }
       });
     } else {
       alert(tweetError(length, charLimit));
@@ -70,7 +71,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('#tweet-container').append($tweet);
+      $('#tweet-container').prepend($tweet);
     }
   };
 
