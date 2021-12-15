@@ -33,6 +33,22 @@ $(document).ready(function() {
   // Test / driver code (temporary). Eventually will get this from the server.
 
 
+  const form = $('.tweet-form');
+
+  form.submit(function(event) {
+    const text = ($(this).serialize());
+    const target = event.currentTarget.action;
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: target,
+      data: text
+    });
+  });
+
+
+
+
   const createTweetElement = function(data) {
     return `<article class="tweet">
   <header class="header">
@@ -54,11 +70,22 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('#tweet-container').append($tweet); // t
+      $('#tweet-container').append($tweet);
     }
   };
 
-  renderTweets(tweetData);
+  const loadTweets = function() {
+    const tweetData = $.ajax({
+      type: "GET",
+      url: "/tweets",
+      dataType: "json",
+      success: function(data) {
+        renderTweets(data);
+      }
+    });
+  };
+
+  loadTweets();
   
 });
 

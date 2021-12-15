@@ -13,10 +13,6 @@ $(document).ready(function() {
     }
   });
 
-  // const tweets = $.ajax({
-  //   url: '/tweets'
-  // });
-  // console.log(tweets);
 
 
 });
