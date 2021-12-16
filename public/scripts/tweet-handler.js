@@ -96,17 +96,10 @@ const renderTweets = function(tweets) {
 };
 // Retrieves tweet data using an ajax GET request, and upon success, sorts the tweets by the date they were created and feeds them into renderTweets
 const loadTweets = function() {
-  $.ajax({
-    type: "GET",
-    url: "/tweets",
-    dataType: "json",
-    success: function(data) {
-      data.sort((a,b) => {
-        return b.created_at - a.created_at;
-      });
-      renderTweets(data);
-    }
+  $.get("/tweets", (data) => {
+    data.sort((a,b) => {
+      return b.created_at - a.created_at;
+    });
+    renderTweets(data);
   });
 };
-
-
