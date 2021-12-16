@@ -25,7 +25,7 @@ $(window).scroll(function() {
 
 // Back to top button on click scrolls back to the top of the page
 $("#back-to-top").click(() => {
-  $(window).scrollTop(0);
+  $('html').animate({scrollTop:0},'slow');
   $('#tweet-box').slideDown();
   $('#tweet-input').focus();
 });
