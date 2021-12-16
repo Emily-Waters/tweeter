@@ -13,7 +13,7 @@
 
 #tweet-button {
   background-color: blue;
-  font-family: 'Bungee', cursive;
+  /* font-family: 'Bungee', cursive; */
   color: white;
   box-shadow: 8px 9px 4px #a1a1a175;
   padding: 0.1em;
@@ -25,11 +25,6 @@
   border-top: 3px solid;
   width: 100%;
   padding: 0.5em 0em 0.5em 0em;
-}
-
-.counter {
-  display: flex;
-  font-family: 'Bungee', cursive;
 }
 
 .tweet-form {
@@ -61,4 +56,9 @@
   margin:0.5em 1em 0em 1em;
   justify-content:space-evenly;
   opacity: 0;
+}
+
+.quote {
+  margin:2em 0em 2em 0em;
+  font-size: smaller;
 }

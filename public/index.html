@@ -42,7 +42,7 @@
     <div class="top-container">
 <!-- Top nav bar (fixed) -->
       <nav>
-        <span id="logo">tweeter</span>
+        <span id="logo" class="bungee">tweeter</span>
         <div class="nav-compose">
           <line><b>Write</b> a new tweet</line>
           <line><i id="compose-button" class="fas fa-angle-double-down"></i></line>
@@ -59,17 +59,17 @@
       </header>
     </div>
 <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="main-container">
       <section id="tweet-box">
-        <h4>"Is it at all possible for anyone to just shut the fuck up?" - Bo Burnham</h4>
+        <h4 class="quote"> “It's better to remain silent and be thought a fool than open ones mouth and remove all doubt”- Mark Twain</h4>
 <!-- Tweet input form -->
         <form action="/tweets/" method="POST" class="tweet-form">
           <label for="tweet-text shadow"></label>
           <textarea name="text" id="tweet-input" class="shadow" placeholder="What are you humming about?"></textarea>
 <!-- Tweet button and counter -->
-          <footer class="tweet-footer">
+          <footer class="tweet-footer bungee">
             <button type="submit" id="tweet-button">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" id="counter"for="tweet-text">140</output>
           </footer>
         </form>
 <!-- Error Message -->

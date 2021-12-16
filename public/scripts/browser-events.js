@@ -16,9 +16,7 @@ $(window).scroll(function() {
   const topOfWindow = $(window).scrollTop();
   const topOfMain = $('main').offset().top;
   const difference = topOfWindow - topOfMain;
-
   if (difference > 0) {
-    console.log("Visible!");
     $('#back-to-top').css('visibility', 'visible');
   } else {
     $('#back-to-top').css('visibility', 'hidden');

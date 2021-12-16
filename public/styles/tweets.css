@@ -29,6 +29,7 @@
 
 .tweet-text {
   padding: 1em 0em 1em 0em;
+  word-wrap: break-word;
 }
 
 .tweet-butt {
