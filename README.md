@@ -1,8 +1,19 @@
-# Tweeter Project
+# Tweeter Project - Emily Waters
 
 Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+
+# Screenshots
+
+## Mobile
+!['Mobile](https://github.com/Emily-Waters/tweeter/blob/master/docs/Mobile.png)
+## Desktop
+!['Desktop'](https://github.com/Emily-Waters/tweeter/blob/master/docs/Desktop.png)
+## Error 1
+!['Error1'](https://github.com/Emily-Waters/tweeter/blob/master/docs/Error1.png)
+## Error 2
+!['Error2'](https://github.com/Emily-Waters/tweeter/blob/master/docs/Error2.png)
 
 ## Getting Started
 
