@@ -28,6 +28,7 @@ const tweetError = (tweetLength, limit) => {
 $('.tweet-form').submit(function(event) {
   event.preventDefault();
   const tweet = $('#tweet-input');
+  const tweetBox = $("#tweet-container");
   const length = tweetLength(tweet);
   const tweetData = ($(this).serialize());
   const targetURL = event.currentTarget.action;
@@ -37,14 +38,13 @@ $('.tweet-form').submit(function(event) {
       url: targetURL,
       data: tweetData,
       success: () => {
-        $("#tweet-container").animate({opacity:0},200, () => {
-          $('.tweet-form').trigger("reset");
+        tweetBox.fadeOut(200, () => {
+          $(this).trigger("reset");
           $('#counter').text(charLimit);
           $('#tweet-input').focus();
-          $("#tweet-container").empty();
+          tweetBox.empty();
           loadTweets();
-          $("#tweet-container").animate({ opacity: 1 }, 500);
-        });
+        }).fadeIn(500);
       }
     });
   }
