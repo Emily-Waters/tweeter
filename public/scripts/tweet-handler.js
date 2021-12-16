@@ -1,10 +1,10 @@
 // Character limit for 'tweets' and targets
-const charLimit     = 140;
-const $tweetCont    = $("#tweet-container");
-const $tweetInput   = $('#tweet-input');
-const $tweetForm    = $('.tweet-form');
-const $tweetButton  = $('#tweet-button');
-const $counter      = $('#counter');
+const charLimit       = 140;
+const $tweetDisp      = $("#tweet-container");
+const $tweetInput     = $('#tweet-input');
+const $tweetForm      = $('.tweet-form');
+const $tweetButton    = $('#tweet-button');
+const $counter        = $('#counter');
 // Returns the length of text entered into the tweet form input
 const tweetLength = (tweet) => {
   return tweet.val().length;
@@ -18,14 +18,14 @@ const tweetValidate = (tweetLength) => {
 };
 // Toggles the display of the error message with a fade in animation, starts with a fadeout promise so that the error message disappears before changing the text and re-rendering the updated error message
 const tweetError = (tweetLength) => {
-  const $error = $('#error-message');
-  $error.animate({ opacity: 0 }, 200, () => {
+  const $errMsg = $('#error-message');
+  $errMsg.animate({ opacity: 0 }, 200, () => {
     if (!tweetLength) {
-      $error.children('line').text("Tweets can't be empty");
-      $error.animate({ opacity: 1 }, 500);
+      $errMsg.children('line').text("Tweets can't be empty");
+      $errMsg.animate({ opacity: 1 }, 500);
     } else if (tweetLength > charLimit) {
-      $error.children('line').text(`Tweets need to be less than ${charLimit} characters`);
-      $error.animate({ opacity: 1 }, 500);
+      $errMsg.children('line').text(`Tweets need to be less than ${charLimit} characters`);
+      $errMsg.animate({ opacity: 1 }, 500);
     }
   });
 };
@@ -39,11 +39,11 @@ $tweetForm.submit(function(event) {
     $.post(targetURL, tweetData, () => {
     })
       .done(() => {
-        $tweetCont.fadeOut(200, () => {
+        $tweetDisp.fadeOut(200, () => {
           $tweetForm.trigger("reset");
           $counter.text(charLimit);
           $tweetInput.focus();
-          $tweetCont.empty();
+          $tweetDisp.empty();
           loadTweets();
         }).fadeIn(500);
       })
@@ -91,7 +91,7 @@ const createTweetElement = function(data) {
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     let $singleTweet = createTweetElement(tweet);
-    $tweetCont.append($singleTweet);
+    $tweetDisp.append($singleTweet);
   }
 };
 // Retrieves tweet data using an ajax GET request, and upon success, sorts the tweets by the date they were created and feeds them into renderTweets
