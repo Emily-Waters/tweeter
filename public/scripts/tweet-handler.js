@@ -10,21 +10,21 @@ const tweetLength = (tweet) => {
   return tweet.val().length;
 };
 // Validates the length of a tweet (not empty, below char limit)
-const tweetValidate = (tweetLength, limit) => {
-  if (!tweetLength || tweetLength > limit) {
+const tweetValidate = (tweetLength) => {
+  if (!tweetLength || tweetLength > charLimit) {
     return false;
   }
   return true;
 };
 // Toggles the display of the error message with a fade in animation, starts with a fadeout promise so that the error message disappears before changing the text and re-rendering the updated error message
-const tweetError = (tweetLength, limit) => {
+const tweetError = (tweetLength) => {
   const $error = $('#error-message');
   $error.animate({ opacity: 0 }, 200, () => {
     if (!tweetLength) {
       $error.children('line').text("Tweets can't be empty");
       $error.animate({ opacity: 1 }, 500);
-    } else if (tweetLength > limit) {
-      $error.children('line').text(`Tweets need to be less than ${limit} characters`);
+    } else if (tweetLength > charLimit) {
+      $error.children('line').text(`Tweets need to be less than ${charLimit} characters`);
       $error.animate({ opacity: 1 }, 500);
     }
   });
@@ -33,9 +33,9 @@ const tweetError = (tweetLength, limit) => {
 $tweetForm.submit(function(event) {
   event.preventDefault();
   const length = tweetLength($tweetInput);
-  const tweetData = ($(this).serialize());
+  const tweetData = $tweetInput.serialize();
   const targetURL = event.currentTarget.action;
-  if (tweetValidate(length, charLimit)) {
+  if (tweetValidate(length)) {
     $.post(targetURL, tweetData, () => {
     })
       .done(() => {
@@ -51,7 +51,7 @@ $tweetForm.submit(function(event) {
         alert('Uh Oh! Something went wrong!');
       });
   }
-  tweetError(length, charLimit);
+  tweetError(length);
 });
 // Detects the 'enter' key being pressed in the tweet input form and submits the form instead of starting a new line
 $tweetForm.keypress(function(e) {
