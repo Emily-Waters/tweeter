@@ -1,9 +1,20 @@
+$white: #FFFFFF;
+
+@mixin flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
 nav {
   display: flex;
   height: 120px;
   background-color: transparent;
-  color: #FFFFFF;
-  justify-content: space-between;
+  color: $white;
+  justify-content:space-between;
   align-items: end;
   z-index: 1;
   position: -webkit-sticky;
@@ -17,9 +28,7 @@ nav {
 }
 
 .nav-compose {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-col-center;
   margin: 1.5em;
   font-size: 0.9rem;
 }
@@ -34,35 +43,32 @@ nav {
 }
 
 #back-to-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-col-center;
   position: fixed;
-  bottom: 5vh;
-  right: 0vw;
+  bottom:5vh;
+  right:0vw;
   visibility: hidden;
-  color: red;
+  color:red;
   font-size: 1vw;
 }
 
 #back-to-top:hover {
   cursor: pointer;
-}
-
+  }
+  
 @media only screen and (min-width: 1024px) {
   nav {
     display: flex;
     width: 100%;
     background-color: blue;
-    color: #FFFFFF;
-    justify-content: space-between;
+    color: $white;
+    justify-content:space-between;
     align-items: end;
     z-index: 3;
     position: fixed;
     top: -1px;
   }
-
   #back-to-top {
-    right: 2vw;
+    right:2vw;
   }
 }

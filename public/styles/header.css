@@ -1,42 +1,42 @@
 .top-container {
-  height:400px;
-  width:100%;
+  height: 400px;
+  width: 100vw;
 }
 
 #profile-header {
-  display:flex;
-  height:inherit;
-  width:inherit;
-  background-color: rgb(216, 152, 57);
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  height: inherit;
+  width: inherit;
+  background-color: #d89839;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
-  position:absolute;
-  top:0;
+  position: absolute;
+  top: 0;
 }
 
 .name {
   color: #FFFFFF;
-    font-size: 150%;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 6em;
+  font-size: 150%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 6em;
 }
 
 @media only screen and (min-width: 1024px) {
   .top-container {
     display: flex;
-    width:40%;
+    width: 40%;
     position: relative;
   }
+
   #profile-header {
-    height:inherit;
-    width:50%;
-    background-color: rgb(216, 152, 57);
+    height: inherit;
+    width: 50%;
+    background-color: #d89839;
     margin: 2em 10% 2em 10%;
     padding: 0 40%;
   }
 }
-
