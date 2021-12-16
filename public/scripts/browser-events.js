@@ -22,7 +22,7 @@ $(window).scroll(function() {
 });
 // Back to top button on click scrolls back to the top of the page, slides down the tweet input form, and focuses the cursor on the input field
 $toTop.click(() => {
-  $('body').animate({scrollTop:0},'slow');
+  $('html').animate({scrollTop:0},'slow');
   $tweetBox .slideDown();
   $tweetInput.focus();
 });

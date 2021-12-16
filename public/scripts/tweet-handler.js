@@ -11,7 +11,6 @@ const tweetValidate = (tweetLength) => {
 };
 // Toggles the display of the error message with a fade in animation, starts with a fadeout promise so that the error message disappears before changing the text and re-rendering the updated error message
 const tweetError = (tweetLength) => {
-  const $errMsg = $('#error-message');
   $errMsg.animate({ opacity: 0 }, 200, () => {
     if (!tweetLength) {
       $errMsg.children('line').text("Tweets can't be empty");
