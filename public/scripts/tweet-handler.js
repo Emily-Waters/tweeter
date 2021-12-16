@@ -43,7 +43,7 @@ $('.tweet-form').submit(function(event) {
           $('#tweet-input').focus();
           $("#tweet-container").empty();
           loadTweets();
-          $("#tweet-container").animate({ opacity: 1 }, 200);
+          $("#tweet-container").animate({ opacity: 1 }, 500);
         });
       }
     });
