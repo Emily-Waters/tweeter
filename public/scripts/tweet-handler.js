@@ -1,9 +1,10 @@
 // Character limit for 'tweets' and targets
-const charLimit = 140;
-const $tweetCont = $("#tweet-container");
-const $tweetInput = $('#tweet-input');
-const $tweetForm = $('.tweet-form');
-const $counter = $('#counter');
+const charLimit     = 140;
+const $tweetCont    = $("#tweet-container");
+const $tweetInput   = $('#tweet-input');
+const $tweetForm    = $('.tweet-form');
+const $tweetButton  = $('#tweet-button');
+const $counter      = $('#counter');
 // Returns the length of text entered into the tweet form input
 const tweetLength = (tweet) => {
   return tweet.val().length;
@@ -55,7 +56,7 @@ $tweetForm.submit(function(event) {
 // Detects the 'enter' key being pressed in the tweet input form and submits the form instead of starting a new line
 $tweetForm.keypress(function(e) {
   if (e.which === 13) {
-    $('#tweet-button').submit();
+    $tweetButton .submit();
     return false;
   }
 });
