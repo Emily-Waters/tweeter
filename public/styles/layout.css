@@ -35,32 +35,4 @@ main {
   z-index: 2;
 }
 
-#back-to-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  left:92vw;
-  top:85vh;
-  visibility: hidden;
-  color:red;
-}
 
-.xl {
-  font-size:4vmax;
-  margin:0.1em
-}
-
-.bungee {
-  font-family: Bungee,cursive;
-}
-
-#back-to-top:hover {
-cursor: pointer;
-}
-
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

@@ -43,3 +43,12 @@
 .small {
   font-size:small;
 }
+
+.xl {
+  font-size:4vmax;
+  margin:0.1em
+}
+
+.bungee {
+  font-family: Bungee,cursive;
+}
