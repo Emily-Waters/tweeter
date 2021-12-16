@@ -59,6 +59,6 @@
   border-radius: 5px;
   width:inherit;
   margin:0.5em 1em 0em 1em;
-  justify-content:center;
+  justify-content:space-evenly;
   opacity: 0;
 }
