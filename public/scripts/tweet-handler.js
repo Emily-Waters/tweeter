@@ -24,7 +24,7 @@ const tweetError = (tweetLength, limit) => {
     }
   });
 };
-// Prevents default POST behaviour, validates the tweet contents and makes an ajax request, or displays the appropriate error message.
+// Prevents default POST behaviour, validates the tweet contents and makes an ajax request, then fades out the tweets, empties and updates them, clears the input field, resets the counter, then fades back in
 $('.tweet-form').submit(function(event) {
   event.preventDefault();
   const tweet = $('#tweet-input');
@@ -41,7 +41,7 @@ $('.tweet-form').submit(function(event) {
         tweetBox.fadeOut(200, () => {
           $(this).trigger("reset");
           $('#counter').text(charLimit);
-          $('#tweet-input').focus();
+          tweet.focus();
           tweetBox.empty();
           loadTweets();
         }).fadeIn(500);
