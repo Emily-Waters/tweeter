@@ -1,10 +1,3 @@
-// Character limit for 'tweets' and targets
-const charLimit       = 140;
-const $tweetDisp      = $("#tweet-container");
-const $tweetInput     = $('#tweet-input');
-const $tweetForm      = $('.tweet-form');
-const $tweetButton    = $('#tweet-button');
-const $counter        = $('#counter');
 // Returns the length of text entered into the tweet form input
 const tweetLength = (tweet) => {
   return tweet.val().length;
