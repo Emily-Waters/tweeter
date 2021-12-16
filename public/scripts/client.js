@@ -10,7 +10,6 @@ const $compose        = $('#compose-button');
 const $toTop          = $('#back-to-top');
 const $errMsg         = $('#error-message');
 
-
 $(document).ready(function() {
   loadTweets();
 });
