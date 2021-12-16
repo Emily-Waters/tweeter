@@ -26,4 +26,6 @@ $(window).scroll(function() {
 // Back to top button on click scrolls back to the top of the page
 $("#back-to-top").click(() => {
   $(window).scrollTop(0);
+  $('#tweet-box').slideDown();
+  $('#tweet-input').focus();
 });
