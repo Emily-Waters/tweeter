@@ -1,16 +1,16 @@
 // Animates the compose button on hover, making it 'bounce'
-$compose.hover(function() {
+$compose.hover(() => {
   $compose
     .animate({top:"5px"},500)
     .animate({top:"0px"},500);
 });
 // On clicking the compose button, toggles the slide for the tweet input container and puts the cursor in the input area
-$compose.click(function() {
+$compose.click(() => {
   $tweetBox .slideToggle('fast');
   $tweetInput.focus();
 });
 // Scroll behaviour. Takes the top position of the window and compares it to the top position of the main container and computes the difference. If the top of the main container exceeds the top of the window then a 'back to top' button is made visible in the lower right corner
-$window.scroll(function() {
+$window.scroll(() => {
   const topOfWindow = $window.scrollTop();
   const topOfMain = $mainContainer.offset().top;
   const difference = topOfWindow - topOfMain;
