@@ -39,4 +39,7 @@ nav {
   top: 0em;
 }
 
+#compose-button:hover {
+  cursor: pointer;
+}
 

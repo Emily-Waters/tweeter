@@ -3,6 +3,13 @@ $(document).ready(function() {
   const charLimit = 140;
   const form = $('.tweet-form');
 
+  form.keypress(function(e) {
+    if (e.which === 13) {
+      $('#tweet-button').submit();
+      return false;
+    }
+  });
+
 
   // Returns the length of text entered into the tweet form input
   const tweetLength = (tweet) => {
@@ -63,22 +70,21 @@ $(document).ready(function() {
 
   const createTweetElement = function(data) {
     const safeHTML = `<p>${escape(data.content.text)}</p>`;
-    // <script>alert('uh oh!');</script>
     return `<article class="tweet">
-  <header class="header">
-    <div><img src=${data.user.avatars}>${data.user.name}</div>
-    <div class="handle">${data.user.handle}</div>
-  </header>
-  <div class="tweet-text">${safeHTML}</div>
-  <footer class="tweet-footer small">
-    <line>${timeago.format(data.created_at)}</line>
-    <div>
-      <button class="tweet-butt"><i class="fas fa-flag"></i></button>
-      <button class="tweet-butt"><i class="fas fa-retweet"></i></button>
-      <button class="tweet-butt"><i class="fas fa-heart"></i></button>
-    </div>
-  </footer>
-</article>`;
+              <header class="header">
+                <div><img src=${data.user.avatars}>${data.user.name}</div>
+                <div class="handle">${data.user.handle}</div>
+              </header>
+              <div class="tweet-text">${safeHTML}</div>
+              <footer class="tweet-footer small">
+                <line>${timeago.format(data.created_at)}</line>
+                <div>
+                  <button class="tweet-butt"><i class="fas fa-flag"></i></button>
+                  <button class="tweet-butt"><i class="fas fa-retweet"></i></button>
+                  <button class="tweet-butt"><i class="fas fa-heart"></i></button>
+                </div>
+              </footer>
+            </article>`;
   };
   
   const renderTweets = function(tweets) {
@@ -106,15 +112,35 @@ $(document).ready(function() {
 
   $('#compose-button').hover(function() {
     $(this)
-      .css('cursor','pointer')
+      // .css('cursor','pointer')
       .animate({top:"5px"},500)
       .animate({top:"0px"},500);
   });
   
   $('#compose-button').click(function() {
-
+    $('#tweet-box').slideToggle('fast');
+    $('#tweet-input').focus();
   });
   
+  $(window).scroll(function() {
+    const topOfWindow = $(window).scrollTop();
+    const topOfMain = $('main').offset().top;
+    const difference = topOfWindow - topOfMain;
+
+    if (difference > 0) {
+      console.log("Visible!");
+      $('#back-to-top').css('visibility', 'visible');
+    } else {
+      $('#back-to-top').css('visibility', 'hidden');
+    }
+  });
+
+  $("#back-to-top").click(() => {
+    $(window).scrollTop(0);
+  });
+
+
+
 });
 
 
