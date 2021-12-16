@@ -2,8 +2,8 @@
 $('#tweet-input').on('input', function() {
   const textChars = $(this).val();
   const charCount = textChars.length;
-  const counter = $(this).next().children('#counter');
-  $(counter).text(140 - charCount);
+  const $counter = $(this).next().children('#counter');
+  $counter.text(140 - charCount);
   if (charCount > 140) {
     $(counter).css('color','red');
   } else {
