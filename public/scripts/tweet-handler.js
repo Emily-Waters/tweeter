@@ -37,11 +37,15 @@ $('.tweet-form').submit(function(event) {
       url: targetURL,
       data: tweetData,
       success: () => {
-        $('.tweet-form').trigger("reset");
-        $('#counter').text(charLimit);
-        $('#tweet-input').focus();
-        $("#tweet-container").empty();
-        loadTweets();
+        $("#tweet-container").animate({opacity:0},200, () => {
+          loadTweets();
+          $('.tweet-form').trigger("reset");
+          $('#counter').text(charLimit);
+          $('#tweet-input').focus();
+          $("#tweet-container").empty();
+        });
+        $("#tweet-container").animate({ opacity: 1 }, 200);
+
       }
     });
   }
