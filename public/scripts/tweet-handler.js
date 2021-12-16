@@ -4,7 +4,6 @@ const $tweetCont = $("#tweet-container");
 const $tweetInput = $('#tweet-input');
 const $tweetForm = $('.tweet-form');
 const $counter = $('#counter');
-
 // Returns the length of text entered into the tweet form input
 const tweetLength = (tweet) => {
   return tweet.val().length;
@@ -36,19 +35,14 @@ $tweetForm.submit(function(event) {
   const tweetData = ($(this).serialize());
   const targetURL = event.currentTarget.action;
   if (tweetValidate(length, charLimit)) {
-    $.ajax({
-      type: "POST",
-      url: targetURL,
-      data: tweetData,
-      success: () => {
-        $tweetCont.fadeOut(200, () => {
-          $tweetForm.trigger("reset");
-          $counter.text(charLimit);
-          $tweetInput.focus();
-          $tweetCont.empty();
-          loadTweets();
-        }).fadeIn(500);
-      }
+    $.post(targetURL, tweetData, () => {
+      $tweetCont.fadeOut(200, () => {
+        $tweetForm.trigger("reset");
+        $counter.text(charLimit);
+        $tweetInput.focus();
+        $tweetCont.empty();
+        loadTweets();
+      }).fadeIn(500);
     });
   }
   tweetError(length, charLimit);
