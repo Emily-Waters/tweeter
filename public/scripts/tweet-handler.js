@@ -37,7 +37,8 @@ $('.tweet-form').submit(function(event) {
       url: targetURL,
       data: tweetData,
       success: () => {
-        location.reload();
+        $("#tweet-container").empty();
+        loadTweets();
       }
     });
   } else {
