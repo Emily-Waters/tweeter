@@ -38,14 +38,13 @@ $('.tweet-form').submit(function(event) {
       data: tweetData,
       success: () => {
         $("#tweet-container").animate({opacity:0},200, () => {
-          loadTweets();
           $('.tweet-form').trigger("reset");
           $('#counter').text(charLimit);
           $('#tweet-input').focus();
           $("#tweet-container").empty();
+          loadTweets();
+          $("#tweet-container").animate({ opacity: 1 }, 200);
         });
-        $("#tweet-container").animate({ opacity: 1 }, 200);
-
       }
     });
   }
