@@ -6,9 +6,6 @@ $white: #FFFFFF;
   align-items: center;
 }
 
-
-
-
 nav {
   display: flex;
   height: 120px;
@@ -17,7 +14,7 @@ nav {
   justify-content:space-between;
   align-items: end;
   z-index: 1;
-  position: -webkit-sticky;
+  // position: -webkit-sticky;
   position: sticky;
   top: -1px;
 }
