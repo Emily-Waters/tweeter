@@ -1,11 +1,8 @@
 nav {
-  /* font-family: 'Bungee', cursive; */
   display: flex;
   height: 120px;
   width: 100%;
   background-color: transparent;
-
-  /* background-color: #4056A1; */
   color: #FFFFFF;
   justify-content:space-between;
   align-items: end;
@@ -29,10 +26,6 @@ nav {
   font-size: smaller;
 }
 
-/* .red {
-  color: red
-} */
-
 #compose-button {
   color: red;
   position: relative;
@@ -43,3 +36,19 @@ nav {
   cursor: pointer;
 }
 
+#back-to-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left:92vw;
+  top:85vh;
+  visibility: hidden;
+  color:red;
+}
+
+#back-to-top:hover {
+  cursor: pointer;
+  }
+  
+  

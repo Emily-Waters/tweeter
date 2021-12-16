@@ -37,81 +37,59 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
-
+<!-- Main body -->
   <body>
-    <!-- Header with name and profile pic -->
     <div class="top-container">
-          <!-- Top nav bar (fixed) -->
-      <nav class="nav">
-
+<!-- Top nav bar (fixed) -->
+      <nav>
         <span id="logo">tweeter</span>
-
         <div class="nav-tweet">
-
           <line><b>Write</b> a new tweet</line>
           <line><i id="compose-button" class="fas fa-angle-double-down"></i></line>
-
         </div>
-
       </nav>
-
+<!-- Header with name and profile pic -->
       <header id="profile-header">
-        
         <div>
           <img src="/images/profile-hex.png"> 
         </div>
-
         <div class="name">
           <line><b>Emily</b> Waters</line>
         </div>
-
       </header>
-
     </div>
-
-    <!-- Page-specific (main) content here -->
+<!-- Page-specific (main) content here -->
     <main class="container">
-
       <section id="tweet-box">
-
         <h4>"Is it at all possible for anyone to just shut the fuck up?" - Bo Burnham</h4>
-
+<!-- Tweet input form -->
         <form action="/tweets/" method="POST" class="tweet-form">
           <label for="tweet-text shadow"></label>
           <textarea name="text" id="tweet-input" class="shadow" placeholder="What are you humming about?"></textarea>
-
+<!-- Tweet button and counter -->
           <footer class="tweet-footer">
             <button type="submit" id="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
-
         </form>
-
-
-
+<!-- Error Message -->
       <div id="error-message">
         <i class="fas fa-exclamation-triangle"></i>
         <line>ERROR MESSAGE PLACEHOLDER</line>
         <i class="fas fa-exclamation-triangle"></i>
       </div>
-
     </section>
-
+<!-- Section that holds tweets -->
     <section id="tweet-container"></section>
-
-    <!-- Back to top button -->
+<!-- Back to top button -->
     <div id="back-to-top">
-
       <i class="xl fas fa-chevron-circle-up"></i>
       <line class="bungee small">Back to top</line>
-
     </div>
-
     </main>
-
+<!-- Scripts -->
     <script src="scripts/browser-events.js"></script>
     <script src="scripts/composer-char-counter.js"></script>
     <script src="scripts/tweet-handler.js"></script>
-
   </body>
 </html>
