@@ -13,6 +13,6 @@ const $window         = $(window);
 const $mainContainer  = $('main');
 const $page           = $('html');
 
-$(document).ready(function() {
+$(document).ready(() => {
   loadTweets();
 });

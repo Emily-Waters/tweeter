@@ -28,7 +28,7 @@ const escape = function(str) {
   return div.innerHTML;
 };
 // 'escapes' html characters to prevent XXS attacks, and populates an html article (tweet)
-const createTweetElement = function(data) {
+const createTweetElement = (data) => {
   const safeHTML = `<p>${escape(data.content.text)}</p>`;
   const convertDate = timeago.format(data.created_at);
   return `
@@ -49,14 +49,14 @@ const createTweetElement = function(data) {
   </article>`;
 };
 // Appends tweet html to the main tweet container
-const renderTweets = function(tweets) {
+const renderTweets = (tweets) => {
   for (const tweet of tweets) {
     let $singleTweet = createTweetElement(tweet);
     $tweetDisp.append($singleTweet);
   }
 };
 // Retrieves tweet data using an ajax GET request, and upon success, sorts the tweets by the date they were created and feeds them into renderTweets
-const loadTweets = function() {
+const loadTweets = () => {
   $.get("/tweets", (data) => {
     data.sort((a,b) => {
       return b.created_at - a.created_at;
