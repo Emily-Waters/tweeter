@@ -13,6 +13,3 @@ const $errMsg         = $('#error-message');
 $(document).ready(function() {
   loadTweets();
 });
-
-
-

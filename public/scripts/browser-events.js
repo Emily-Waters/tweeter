@@ -1,6 +1,6 @@
 // Animates the compose button on hover, making it 'bounce'
 $compose.hover(function() {
-  $(this)
+  $compose
     .animate({top:"5px"},500)
     .animate({top:"0px"},500);
 });
