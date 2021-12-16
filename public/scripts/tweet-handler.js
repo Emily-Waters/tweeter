@@ -18,7 +18,7 @@ const tweetError = (tweetLength, limit) => {
     if (!tweetLength) {
       error.children('line').text("Tweets can't be empty");
       error.animate({ opacity: 1 }, 500);
-    } else {
+    } else if (tweetLength > limit) {
       error.children('line').text(`Tweets need to be less than ${limit} characters`);
       error.animate({ opacity: 1 }, 500);
     }
@@ -37,13 +37,15 @@ $('.tweet-form').submit(function(event) {
       url: targetURL,
       data: tweetData,
       success: () => {
+        $('.tweet-form').trigger("reset");
+        $('#counter').text(charLimit);
+        $('#tweet-input').focus();
         $("#tweet-container").empty();
         loadTweets();
       }
     });
-  } else {
-    tweetError(length, charLimit);
   }
+  tweetError(length, charLimit);
 });
 // Detects the 'enter' key being pressed in the tweet input form and submits the form instead of starting a new line
 $('.tweet-form').keypress(function(e) {
