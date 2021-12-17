@@ -8,6 +8,9 @@ html {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 20px;
   width: 100vw;
+  color: #4d4a43;
+  background-color: rgba(150, 150, 150, 0.226);
+  display: flex;
 }
 
 *, *:before, *:after {
@@ -18,9 +21,8 @@ html {
  * Global layout stuff
  */
 body {
+  width: 100vw;
   display: flex;
-  color: #4d4a43;
-  background-color: rgba(150, 150, 150, 0.226);
   font-size: 1rem;
   flex-direction: column;
 }
@@ -47,7 +49,7 @@ body {
   }
 
   .main-container {
-    width: 50%;
+    width: 60%;
     margin: 1em;
   }
 }
