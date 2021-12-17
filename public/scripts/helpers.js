@@ -15,9 +15,11 @@ const tweetError = (tweetLength) => {
     if (!tweetLength) {
       $errMsg.children('line').text("Tweets can't be empty");
       $errMsg.animate({ opacity: 1 }, 500);
+      buttonBounce();
     } else if (tweetLength > charLimit) {
       $errMsg.children('line').text(`Tweets need to be less than ${charLimit} characters`);
       $errMsg.animate({ opacity: 1 }, 500);
+      buttonBounce();
     }
   });
 };
@@ -63,4 +65,11 @@ const loadTweets = () => {
     });
     renderTweets(data);
   });
+};
+
+// Animates Tweet button with a bounce
+const buttonBounce = () => {
+  $tweetButton
+    .animate({"padding": "-=3px", margin : "+=3px"}, 100)
+    .animate({"padding": "+=3px", margin : "-=3px"}, 100);
 };

@@ -4,6 +4,7 @@ $tweetForm.submit((event) => {
   const length = tweetLength($tweetInput);
   const tweetData = $tweetInput.serialize();
   const targetURL = event.currentTarget.action;
+  buttonBounce();
   if (tweetValidate(length)) {
     $.post(targetURL, tweetData, () => {
     })
@@ -25,7 +26,8 @@ $tweetForm.submit((event) => {
 // Detects the 'enter' key being pressed in the tweet input form and submits the form instead of starting a new line
 $tweetForm.keypress((event) => {
   if (event.which === 13) {
-    $tweetButton .submit();
+    console.log("Enter!");
+    $tweetButton.click();
     return false;
   }
 });
