@@ -2,3 +2,5 @@ node_modules/
 .env
 .DS_Store
 public/styles/example.css
+sass/header.scss sass/layout.scss sass/nav.scss sass/new-tweet.scss sass/tweets.
+
