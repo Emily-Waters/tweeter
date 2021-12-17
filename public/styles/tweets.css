@@ -9,8 +9,10 @@
 }
 
 .tweet {
+  height: 11em;
   width: 100%;
   border: 3px solid #4e4e4e;
+  border-radius: 1em 1em 1em 0em;
   padding: 1em 1em 0em 1em;
   margin-top: 1em;
 }
@@ -25,7 +27,10 @@
 }
 
 .tweet:hover {
-  box-shadow: 8px 9px 4px #a1a1a175;
+  box-shadow: 8px 9px 1em rgba(0, 0, 0, 0.527);
+  width: 101%;
+  height: 11.1em;
+  margin-top: 0.9em;
 }
 
 .tweet-text {
