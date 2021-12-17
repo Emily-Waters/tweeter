@@ -9,7 +9,7 @@
 }
 
 .tweet {
-  height: 11em;
+  height: 11.5rem;
   width: 100%;
   border: 3px solid #4e4e4e;
   border-radius: 1em 1em 1em 0em;
@@ -29,7 +29,7 @@
 .tweet:hover {
   box-shadow: 8px 9px 1em rgba(0, 0, 0, 0.527);
   width: 101%;
-  height: 11.1em;
+  height: 11.6rem;
   margin-top: 0.9em;
 }
 
