@@ -27,7 +27,7 @@
 }
 
 .tweet:hover {
-  box-shadow: 8px 9px 1em rgba(0, 0, 0, 0.527);
+  box-shadow: 8px 9px 1em rgba(0, 0, 0, 0.5);
   width: 101%;
   height: 11.6rem;
   margin-top: 0.9em;

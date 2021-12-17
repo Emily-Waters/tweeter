@@ -13,10 +13,13 @@
 
 #tweet-button {
   background-color: blue;
-  /* font-family: 'Bungee', cursive; */
   color: white;
-  box-shadow: 8px 9px 4px #a1a1a175;
+  box-shadow: 8px 9px 1em rgba(44, 44, 44, 0.5);
   padding: 0.1em;
+}
+
+#tweet-button:hover {
+  box-shadow: 8px 9px 1em rgba(0, 0, 0, 0.75);
 }
 
 .tweet-footer {
