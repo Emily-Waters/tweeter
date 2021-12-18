@@ -9,13 +9,16 @@ $tweetForm.submit((event) => {
     $.post(targetURL, tweetData, () => {
     })
       .done(() => {
-        $tweetDisp.fadeOut(200, () => {
-          $tweetForm.trigger("reset");
-          $counter.text(charLimit);
-          $tweetInput.focus();
-          $tweetDisp.empty();
-          loadTweets();
-        }).fadeIn(500);
+        $.get("/tweets", (data) => {
+          const $newTweet = createTweetElement(data[data.length - 1]);
+          $tweetDisp
+            .fadeOut(50)
+            .prepend($newTweet)
+            .fadeIn(100);
+        });
+        $tweetForm.trigger("reset");
+        $counter.text(charLimit);
+        $tweetInput.focus();
       })
       .fail(() => {
         alert('Uh Oh! Something went wrong!');
