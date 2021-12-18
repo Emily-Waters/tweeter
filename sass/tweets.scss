@@ -9,12 +9,13 @@
 }
 
 .tweet {
-  height:11.5rem;
+  height:100%;
   width: 100%;
   border: 3px solid rgb(78, 78, 78);
   border-radius: 1em 1em 1em 0em;
-  padding:1em 1em 0em 1em;
+  padding:0.5em 1em 0.5em 1em;
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .header {
@@ -29,10 +30,14 @@
 .tweet:hover {
   box-shadow: 8px 9px 1em rgba(0, 0, 0, 0.5);
   width:101%;
-  height:11.6rem;
+  height:101%;
+  font-size: 101%;
+  padding:0.55em 1em 0.55em 1em;
   margin-top: 0.9em;
+  margin-bottom: 0.9em;
+  border: 3px solid rgb(41, 41, 41);
+  background-color: rgba(255, 255, 255, 0.342);
 }
-
 .tweet-text {
   padding: 1em 0em 1em 0em;
   word-wrap: break-word;

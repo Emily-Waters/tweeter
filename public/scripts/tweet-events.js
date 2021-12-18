@@ -10,13 +10,13 @@ $tweetForm.submit((event) => {
         $.get("/tweets")
           .done((data) => {
             const $newTweet = createTweetElement(data[data.length - 1]);
+            $tweetForm.trigger("reset");
+            $counter.text(charLimit);
+            $tweetInput.focus();
             $tweetDisp
               .fadeOut(50)
               .prepend($newTweet)
               .fadeIn(100);
-            $tweetForm.trigger("reset");
-            $counter.text(charLimit);
-            $tweetInput.focus();
           });
       });
   }
