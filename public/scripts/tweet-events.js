@@ -6,22 +6,19 @@ $tweetForm.submit((event) => {
   const targetURL = event.currentTarget.action;
   buttonBounce();
   if (tweetValidate(length)) {
-    $.post(targetURL, tweetData, () => {
-    })
+    $.post(targetURL, tweetData)
       .done(() => {
-        $.get("/tweets", (data) => {
-          const $newTweet = createTweetElement(data[data.length - 1]);
-          $tweetDisp
-            .fadeOut(50)
-            .prepend($newTweet)
-            .fadeIn(100);
-        });
-        $tweetForm.trigger("reset");
-        $counter.text(charLimit);
-        $tweetInput.focus();
-      })
-      .fail(() => {
-        alert('Uh Oh! Something went wrong!');
+        $.get("/tweets")
+          .done((data) => {
+            const $newTweet = createTweetElement(data[data.length - 1]);
+            $tweetDisp
+              .fadeOut(50)
+              .prepend($newTweet)
+              .fadeIn(100);
+            $tweetForm.trigger("reset");
+            $counter.text(charLimit);
+            $tweetInput.focus();
+          });
       });
   }
   tweetError(length);
